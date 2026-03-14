@@ -1,0 +1,18 @@
+{
+    "sqltools.connections": [
+        {
+            "pgOptions": {
+                "ssl": {
+                    "rejectUnauthorized": true
+                }
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "driver": "PostgreSQL",
+            "name": "Render-CSE340",
+            "database": "postgresql://demowb_user:SlfuHRSqOA1Bbt3wNPgDk5cR19kYaOBk@dpg-d6mum1fkijhs73e4p2f0-a.oregon-postgres.render.com/demowb",
+            "connectString": "postgresql://demowb_user:SlfuHRSqOA1Bbt3wNPgDk5cR19kYaOBk@dpg-d6mum1fkijhs73e4p2f0-a.oregon-postgres.render.com/demowb"
+        }
+    ]
+}
