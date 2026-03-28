@@ -260,13 +260,6 @@ INNER JOIN public.classification c
     ON i.classification_id = c.classification_id
 WHERE c.classification_name = 'Sport';
 
-UPDATE public.inventory
-SET 
-    inv_image = REPLACE(inv_image, '/images/', '/images/vehicles/'),
-    inv_thumbnail = REPLACE(inv_thumbnail, '/images/', '/images/vehicles/');
+
     
 
-UPDATE public.inventory
-SET 
-    inv_image = REPLACE(inv_image, '/images/vehicles/vehicles/', '/images/vehicles/'),
-    inv_thumbnail = REPLACE(inv_thumbnail, '/images/vehicles/vehicles/', '/images/vehicles/');
