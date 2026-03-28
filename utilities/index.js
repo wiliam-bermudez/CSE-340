@@ -31,7 +31,7 @@ Util.getNav = async function (req, res, next) {
 * Build the classification view HTML
 * ************************************ */
 Util.buildClassificationGrid = async function(data){
-  let grid
+  let grid=""
   if(data.length > 0){
     grid = '<ul id="inv-display">'
     data.forEach(vehicle => { 
@@ -78,6 +78,7 @@ Util.buildVehicleDetail = async function(vehicle){
 
     // Image (FULL image, not thumbnail)
     detail += '<div class="vehicle-image">'
+    console.log(vehicle.inv_image)
     detail += '<img src="' + vehicle.inv_image + '" alt="Image of ' 
       + vehicle.inv_make + ' ' + vehicle.inv_model + '">'
     detail += '</div>'
