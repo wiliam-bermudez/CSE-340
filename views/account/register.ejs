@@ -1,0 +1,76 @@
+<%- include('../partials/header') %>
+
+<div id="wrapper">
+  <div class="account-container">
+    <h1><%= title %></h1>
+
+    <!-- Flash message -->
+    <% if (messages && messages.length > 0) { %>
+      <div class="flash-message">
+        <%= messages %>
+      </div>
+    <% } %>
+
+    <form class="account-form" method="post" action="/account/register">
+      <!-- First Name -->
+      <label for="account_firstname">First Name</label>
+      <input 
+        type="text" 
+        id="account_firstname" 
+        name="account_firstname" 
+        value="<%= firstName %>" 
+        required
+      >
+
+      <!-- Last Name -->
+      <label for="account_lastname">Last Name</label>
+      <input 
+        type="text" 
+        id="account_lastname" 
+        name="account_lastname" 
+        value="<%= lastName %>" 
+        required
+      >
+
+      <!-- Email -->
+      <label for="account_email">Email</label>
+      <input 
+        type="email" 
+        id="account_email" 
+        name="account_email" 
+        value="<%= email %>" 
+        required
+      >
+
+      <!-- Password -->
+      <label for="account_password">Password</label>
+      <input 
+        type="password" 
+        id="account_password" 
+        name="account_password" 
+        required
+      >
+
+      <!-- Password requirements (display only, enforced later) -->
+      <div class="password-requirements">
+        <p>Password must:</p>
+        <ul>
+          <li>Be at least 12 characters long</li>
+          <li>Contain at least 1 capital letter</li>
+          <li>Contain at least 1 number</li>
+          <li>Contain at least 1 special character</li>
+        </ul>
+      </div>
+
+      <!-- Submit Button -->
+      <button type="submit">Register</button>
+    </form>
+
+    <!-- Link to login -->
+    <div class="register-link">
+      <p>Already have an account? <a href="/account/login">Login here</a></p>
+    </div>
+  </div>
+</div>
+
+<%- include('../partials/footer') %>
