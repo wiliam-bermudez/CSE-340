@@ -22,7 +22,8 @@ accountController.buildRegister = async function (req, res, next) {
     messages: req.flash("notice"),
     firstName: "",
     lastName: "",
-    email: ""
+    email: "",
+    errors: null,
   })
 }
 
@@ -57,6 +58,7 @@ async function registerAccount(req, res) {
       firstName: account_firstname,
       lastName: account_lastname,
       email: account_email
+
     })
   }
 }

@@ -48,10 +48,11 @@
         type="password" 
         id="account_password" 
         name="account_password" 
+        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{12,}$"
         required
       >
 
-      <!-- Password requirements (display only, enforced later) -->
+      <!-- Password requirements -->
       <div class="password-requirements">
         <p>Password must:</p>
         <ul>
@@ -73,4 +74,12 @@
   </div>
 </div>
 
-<%- include('../partials/footer') %>
+<% if (errors) { %>
+  <ul class="notice">
+ <% errors.array().forEach(error => { %>
+   <li><%= error.msg %></li>
+<%  }) %>
+ </ul>
+<% } %>
+
+
