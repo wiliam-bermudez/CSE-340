@@ -1,4 +1,3 @@
-<%- include('../partials/header') %>
 
 <div id="wrapper">
   <div class="account-container">
@@ -15,11 +14,10 @@
       <!-- First Name -->
       <label for="account_firstname">First Name</label>
       <input 
-        type="text" 
-        id="account_firstname" 
-        name="account_firstname" 
-        value="<%= firstName %>" 
-        required
+      type="text"
+      name="account_firstname"
+      id="accountFirstname"
+      required value="<%= locals.account_firstname %>"
       >
 
       <!-- Last Name -->
@@ -28,8 +26,8 @@
         type="text" 
         id="account_lastname" 
         name="account_lastname" 
-        value="<%= lastName %>" 
-        required
+        value="<%= locals.account_lastName %>" 
+        required 
       >
 
       <!-- Email -->
@@ -38,7 +36,7 @@
         type="email" 
         id="account_email" 
         name="account_email" 
-        value="<%= email %>" 
+        value="<%= locals.account_email %>" 
         required
       >
 

@@ -5,6 +5,8 @@ const utilities = require("../utilities/")
 const accountController = require("../controllers/accountController")
 const regValidate = require('../utilities/account-validation')
 
+
+
 // Route for account home
 router.get(
   "/",
@@ -30,6 +32,16 @@ router.post(
   regValidate.checkRegData,
   utilities.handleErrors(accountController.buildRegister)
 )
+
+
+// Process the login attempt
+router.post(
+  "/login",
+  (req, res) => {
+    res.status(200).send('login process')
+  }
+)
+
 
 // Export the router
 module.exports = router
