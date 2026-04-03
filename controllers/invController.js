@@ -48,4 +48,64 @@ invCont.buildByInventoryId = async function (req, res, next) {
   })
 }
 
+/* ***************************
+ *  Build vehicle detail view
+ * ************************** */
+
+
+    // Build Management View
+    invCont.buildManagement = async function (req, res, next) {
+      let nav = await utilities.getNav()
+      res.render("inventory/management", {
+        title: "Inventory Management",
+        nav,
+        messages: req.flash("notice")
+      })
+    }
+
+
+    // Build Add Classification view
+  invCont.buildAddClassification = async function (req, res) {
+    let nav = await utilities.getNav()
+    res.render("inventory/add-classification", {
+      title: "Add Classification",
+      nav,
+      errors: null,
+      classification_name: "",
+      messages: req.flash("notice")
+    })
+  }
+
+  // Process form
+  invCont.addClassification = async function (req, res) {
+    let nav = await utilities.getNav()
+    const { classification_name } = req.body
+
+    const result = await invModel.addClassification(classification_name)
+
+    if (result) {
+      req.flash("notice", "Classification added successfully.")
+
+      // rebuild nav to include new classification
+      nav = await utilities.getNav()
+
+      return res.render("inventory/management", {
+        title: "Inventory Management",
+        nav,
+        messages: req.flash("notice")
+      })
+    } else {
+      req.flash("notice", "Sorry, the insert failed.")
+
+      return res.render("inventory/add-classification", {
+        title: "Add Classification",
+        nav,
+        classification_name,
+        errors: null,
+        messages: req.flash("notice")
+      })
+    }
+  }
+
+
 module.exports = invCont

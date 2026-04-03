@@ -1,0 +1,29 @@
+<%- include("../partials/header") %>
+
+<div id="wrapper">
+  <div class="management-container">
+    
+    <h1><%= title %></h1>
+
+    <!-- Flash Messages -->
+    <%- messages() %>
+
+    <section class="management-links">
+      <h2>Inventory Management</h2>
+
+      <ul>
+        <li>
+          <a href="/inv/add-classification">
+            Add New Classification
+          </a>
+        </li>
+        <li>
+          <a href="/inv/add-inventory">
+            Add New Inventory Item
+          </a>
+        </li>
+      </ul>
+    </section>
+
+  </div>
+</div>

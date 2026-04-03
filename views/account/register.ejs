@@ -3,11 +3,7 @@
     <h1><%= title %></h1>
 
     <!-- Flash message -->
-    <% if (messages && messages.length > 0) { %>
-      <div class="flash-message">
-        <%= messages %>
-      </div>
-    <% } %>
+    <%- messages() %>
 
     <form class="account-form" method="post" action="/account/register">
       

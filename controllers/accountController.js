@@ -35,7 +35,7 @@ async function registerAccount(req, res) {
 
   let hashedPassword
   try {
-    // ✅ FIX: uso correcto async
+    
     hashedPassword = await bcrypt.hash(account_password, 10)
   } catch (error) {
     req.flash("notice", 'Sorry, there was an error processing the registration.')
