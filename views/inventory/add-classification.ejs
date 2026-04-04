@@ -1,3 +1,5 @@
+<%- include("../partials/header") %>
+
 <div id="wrapper">
   <div class="form-container">
 
@@ -6,7 +8,7 @@
     <!-- Flash Messages -->
     <%- messages() %>
 
-    <!-- Server-side Errors -->
+    <!-- Server-side Validation Errors -->
     <% if (errors) { %>
       <ul class="notice">
         <% errors.array().forEach(error => { %>
@@ -15,8 +17,7 @@
       </ul>
     <% } %>
 
-    <form action="/inventory/add-classification" method="post">
-
+    <form action="/inv/add-classification" method="post">
       <label for="classification_name">Classification Name</label>
       <input 
         type="text"
